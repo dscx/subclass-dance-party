@@ -5,11 +5,12 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("floor.jpg");
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpDancerButton {
   padding:5px 12px;
   float:right;
 }
@@ -21,12 +22,35 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  width:30px;
+  height:30px;
+  border-radius: 15px;
+  background-color: red;
+  position: absolute;
+}
+.color{
+  width:30px;
+  height:30px;
+  border-radius: 15px;
+  background-color: blue;
   position:absolute;
 }
-.dancer_color{
-  border:10px solid green;
-  border-radius:10px;
+.shape{
+  width:30px;
+  height:30px;
+  border-radius: 0px;
+  background-color: yellow;
   position:absolute;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
 }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.highlighted{
+  border: 10px solid white;
+}
+

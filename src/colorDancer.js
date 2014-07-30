@@ -1,6 +1,6 @@
 var ColorDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
-  this.$node = $('<span class="dancer_color"></span>');
+  this.$node = $('<span class="dancer color"></span>');
   this.setPosition(top, left);
  // console.log(Object.prototype.hasOwnProperty(this.setPosition)); 
 };
@@ -15,6 +15,13 @@ ColorDancer.prototype.step = function() {
 
 ColorDancer.prototype.setPosition = function(top, left) {
   var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
+};
+ColorDancer.prototype.lineUp = function(top, left){
+   var styleSettings = {
     top: top,
     left: left
   };
